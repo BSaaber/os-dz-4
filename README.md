@@ -16,11 +16,11 @@ output.txt:
 #include <unistd.h>
 
 const int size = 4096;
-int main() {
+int main(int argc, char* argv[]) {
     int fd;
     ssize_t read_bytes;
     char buffer[size];
-    if((fd = open("main.c", O_RDONLY)) < 0) {
+    if((fd = open(argv[1], O_RDONLY)) < 0) {
         printf("Can\'t open file\n");
         exit(-1);
     }
@@ -32,7 +32,7 @@ int main() {
     if (close(fd) < 0) {
         printf("Can\'t close this file\n");
     }
-    if((fd = open("output.txt", O_WRONLY | O_CREAT, 0666)) < 0) {
+    if((fd = open(argv[2], O_WRONLY | O_CREAT, 0666)) < 0) {
         printf("Can\'t open file\n");
         exit(-1);
     }
