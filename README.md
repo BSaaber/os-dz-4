@@ -3,7 +3,7 @@
 
 например:
 ```
-gcc main.c -o res && ./res main.c output.txt
+gcc main.c -o res && ./res main.c output.txt && cat output.txt
 ```
 output.txt:
 ```
